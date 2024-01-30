@@ -1,0 +1,3 @@
+﻿30-Jan-2024
+* Recall previous Session
+* Learn Heap and Stack memory management
