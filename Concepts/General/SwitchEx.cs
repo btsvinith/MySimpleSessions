@@ -11,7 +11,8 @@ namespace SimpleSessions.Concepts.General
 
         public void Exec()
         {
-            GetDayBySwitchBlock(5);
+            string name =GetDayBySwitchBlock(4);
+            Console.WriteLine(name);
         }
         public string GetDayBySwitchBlock(int value)
         {

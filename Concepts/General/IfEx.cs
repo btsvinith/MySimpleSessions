@@ -10,7 +10,7 @@ namespace SimpleSessions.Concepts.General
     {
         public void Exec()
         {
-            string name = GetDayByIfConditionOnly(8);
+            string name = GetDayByIfConditionOnly(5);
             Console.WriteLine(name);
         }
         public string GetDayByIfConditionOnly(int value)

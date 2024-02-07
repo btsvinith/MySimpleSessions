@@ -10,9 +10,9 @@ namespace SimpleSessions.Concepts.General
     {
         public void Exec()
         {
-            //string name = GetDayByIfElseBlock(8);
-            // IfElse(20, 18);
-            // Console.WriteLine(name);
+            string name = GetDayByIfElseBlock(5);
+            IfElse(20, 18);
+            Console.WriteLine(name);
         }
         public void IfElse(int x, int y)
         {

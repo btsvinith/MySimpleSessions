@@ -25,18 +25,18 @@ namespace SimpleSessions.Concepts.Oops
         {
             public int Age;
         }
-        class Employee : Man
-        {
+        //class Employee : Man, Human
+        //{
 
-            public int salary;
+        //    public int salary;
 
-            public void getdisplay()
-            {
+        //    public void getdisplay()
+        //    {
 
-                Console.WriteLine("Emp Name: " + Name);
-                Console.WriteLine("Emp Age: " + Age);
-                Console.WriteLine("Emp salary: " + salary);
-            }
-        }
+        //        Console.WriteLine("Emp Name: " + Name);
+        //        Console.WriteLine("Emp Age: " + Age);
+        //        Console.WriteLine("Emp salary: " + salary);
+        //    }
+        //}
     }
 }

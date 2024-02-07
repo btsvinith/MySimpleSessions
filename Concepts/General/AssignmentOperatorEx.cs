@@ -26,7 +26,7 @@ namespace SimpleSessions.Concepts.General
 
             string name = "\"Dhoni\"";
 
-            Console.WriteLine(name);
+            Console.WriteLine(y);
         }
     }
 }

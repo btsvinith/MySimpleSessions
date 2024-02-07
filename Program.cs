@@ -14,7 +14,7 @@ namespace SimpleSessions
         static void Main(String[] args)
         {
             //DataType variableName = DateType obj/value
-            var currentObj = new AssignmentOperatorEx();
+            var currentObj = new ConstructorEx();
             currentObj.Exec();
 
         }
