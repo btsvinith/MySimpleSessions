@@ -54,21 +54,28 @@ namespace SimpleSessions.Concepts.General
             Console.WriteLine("objOne:b " + objOne.b);
             Console.WriteLine("objOne:Type " + objOne.Type);
             objOne.Type = "Some Cons Type";
+            objOne.a = 5;
             Console.WriteLine("objOne:Type " + objOne.Type);
+            Console.WriteLine("objOne:a " + objOne.a);
 
-            Addition objTwo = new Addition(7, 10); //an object is created , para constructor is called
-            Console.WriteLine("objTwo:a " + objTwo.a);
-            Console.WriteLine("objTwo:b " + objTwo.b);
+            //Addition objTwo = new Addition(7, 10); //an object is created , para constructor is called
+            //Console.WriteLine("objTwo:a " + objTwo.a);
+            //Console.WriteLine("objTwo:b " + objTwo.b);
+            ////Console.WriteLine("objTwo:Type " + objTwo.Type);
+            //objTwo.Type = "Some Para Type"; 
             //Console.WriteLine("objTwo:Type " + objTwo.Type);
-            objTwo.Type = "Some Para Type";
-            Console.WriteLine("objTwo:Type " + objTwo.Type);
 
             //TODO: Reference type and Copy obj difference.
-            Addition copy = objTwo;
-            //Addition copy = new Addition(objOne);
+            //Addition copy = objOne;
+            Addition copy = new Addition(objOne);
+            Console.WriteLine("copy:Type before override " + copy.Type);
+            Console.WriteLine("objOne:Type before override " + objOne.Type);
+            objOne.Type = "Test Type";
+            
             Console.WriteLine("copy:a " + copy.a);
             Console.WriteLine("copy:b " + copy.b);
-            Console.WriteLine("copy:Type " + copy.Type);
+            Console.WriteLine("copy:Type after override " + copy.Type);
+            Console.WriteLine("objOne:Type after override " + objOne.Type);
             Console.WriteLine("CopyConstructorEx End...");
         }
     }
