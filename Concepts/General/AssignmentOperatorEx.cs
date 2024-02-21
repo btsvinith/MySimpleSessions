@@ -17,7 +17,7 @@ namespace SimpleSessions.Concepts.General
             int x = 10;
             x = 15;
             //recent/exising OldValue +, - , *, /, % NewValue(right side to assignment operator)
-            x %= 5;
+            x += 5;
 
             decimal y = 10;
             float z = 10.10f;
@@ -26,7 +26,7 @@ namespace SimpleSessions.Concepts.General
 
             string name = "\"Dhoni\"";
 
-            Console.WriteLine(y);
+            Console.WriteLine(x);
         }
     }
 }

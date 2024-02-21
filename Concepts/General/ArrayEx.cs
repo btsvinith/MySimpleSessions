@@ -1,17 +1,59 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SimpleSessions.Concepts.General
 {
-    internal class ArrayEx
+    internal class ArrayEx  
     {
         public void Exec()
+        {
+            ScenarioOne();
+        }
+
+        private void ScenarioTwo()
+        {
+            //integer sorting
+            int[] myIntArray = new int[] { 5, 4, 2, 3, 1, 7, 6 };
+            ArrangeAndPrint(myIntArray, false);
+            ArrangeAndPrint(myIntArray, true);
+
+            //float sorting
+            float[] myFloatArray = new float[] { 5.15F, 4.21F, 2.31F, 3.22F, 1.43F, 7.55F, 6.65F };
+            ArrangeAndPrint(myFloatArray, true);
+
+            //string sorting
+            string[] myStringArray = new string[] { "Pardeep", "Gill", "Nithesh", "Sumit", "Gurdeep", "Dhoni", "Raina", "Jai" };
+            ArrangeAndPrint(myStringArray, true);
+        }
+
+        private void ArrangeAndPrint<T>(T[] values, bool isAsc)
+        {
+            Sorting sorting = new Sorting();
+            var result = sorting.ArrangeValues(values, isAsc);
+            MyConsole.PrintValues(result.ToList());
+            Console.WriteLine("-------------------------------------------");
+        }
+
+        private void ArrangeAndPrint<T>(T[] values)
+        {
+            Sorting sorting = new Sorting();
+            var arrangeAsc = sorting.ArrangeValues(values, true);
+            MyConsole.PrintValues(arrangeAsc.ToList());
+            Console.WriteLine("-------------------------------------------");
+            var arrangeDesc = sorting.ArrangeValues(values, false);
+            MyConsole.PrintValues(arrangeDesc.ToList());
+            Console.WriteLine("-------------------------------------------");
+        }
+
+        private void ScenarioOne()
         {
             int[] myArray = { 5, 4, 2, 3, 1, 7, 6 };
             var result = ArrangeNumbers(myArray, "asc");
             PrintNumbers(result);
+
 
             var resultDes = ArrangeNumbers(myArray, "vinith");
             PrintNumbers(resultDes);

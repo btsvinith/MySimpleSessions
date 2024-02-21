@@ -16,12 +16,12 @@ namespace SimpleSessions.Concepts.Oops
             //string response =  Concad(firstValue, secondValue,"Hi","C");
             //string[] myStrings = { firstValue, secondValue, "Hi", "C" };
             int name = Add(5, 2);
-            float result = Add(4.55f, 5.44f);
+            //float result = Add(4.55f, 5.44f);
             //string response = Concad(myStrings);
             // var response = Add<float>(5.5f, 6, 5);
             //Console.WriteLine(response);
             Console.WriteLine(name + 3);
-            Console.WriteLine(result);
+            //Console.WriteLine(result);
         }
 
         //Datatype has to be different, when no of parameters are same.
@@ -60,11 +60,11 @@ namespace SimpleSessions.Concepts.Oops
             var result = firstNumber + secondNumber;
             return result;
         }
-        public float Add(float firstNumber, float secondNumber)
-        {
-            var result = firstNumber + secondNumber;
-            return result;
-        }
+        //public float Add(float firstNumber, float secondNumber)
+        //{
+        //    var result = firstNumber + secondNumber;
+        //    return result;
+        //}
         //public T Add<T>(T firstValue, T secondValue)
         //{
         //    dynamic firstValueDyn = firstValue;

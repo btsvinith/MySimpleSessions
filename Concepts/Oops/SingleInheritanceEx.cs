@@ -10,6 +10,13 @@ namespace SimpleSessions.Concepts.Oops
     {
         public void Exec()
         {
+
+            ScenarioOne();
+            Console.ReadLine();
+        }
+
+        private void ScenarioOne()
+        {
             Student myObj = new Student();
             //TODO: Have to find and set values for base class with same property names.
             myObj.Id = 1;
@@ -19,8 +26,14 @@ namespace SimpleSessions.Concepts.Oops
             ((Department)myObj).Name = "CSE";
             myObj.NoOfLabs = 5;
             myObj.Display();
+        }
 
-            Console.ReadLine();
+        private void ScenarioTwo()
+        {
+            Department myObj = new Student();
+            myObj.Id = 1;
+            myObj.Name = "Vinith";
+            myObj.NoOfLabs = 5;
         }
 
         class Department 
@@ -28,13 +41,13 @@ namespace SimpleSessions.Concepts.Oops
             public int Id { get; set; }
             public string Name { get; set; }
 
-            public int NoOfLabs { get; set; }
+           internal int NoOfLabs { get; set; }
         }
 
         class Student : Department
         {
-            //public int Id { get; set; }
-            //public string Name { get; set; }
+            public int Id { get; set; }
+            public string Name { get; set; }
             public int Age { get; set; }
             public void Display()
             {

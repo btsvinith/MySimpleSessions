@@ -16,6 +16,7 @@ namespace SimpleSessions.Concepts.General
             CheckStatic cs = new CheckStatic();
             cs.Print();
 
+
             Console.WriteLine(College.CollegeName);
             Console.WriteLine(College.Address);
 

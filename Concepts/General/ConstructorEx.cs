@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Linq;  
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,6 +14,7 @@ namespace SimpleSessions.Concepts.General
             Addition.d = 6;
             CopyConstructorEx();
             Console.Read();
+
         }
 
         void DefaultConstructorEx()
@@ -22,10 +23,11 @@ namespace SimpleSessions.Concepts.General
             Addition objOne = new Addition(); //an object is created , constructor is called
             Console.WriteLine("objOne:a " + objOne.a);
             Console.WriteLine("objOne:b " + objOne.b);
+            
             Addition objTwo = new Addition();
             Console.WriteLine("objTwo:a " + objTwo.a);
             Console.WriteLine("objTwo:b " + objTwo.b);
-            Console.WriteLine(Addition.d);
+
             Console.WriteLine("DefaultConstructorEx End...");
         }
 
@@ -47,22 +49,21 @@ namespace SimpleSessions.Concepts.General
 
         void CopyConstructorEx()
         {
-            Console.WriteLine("CopyConstructorEx Start...");
+            //Console.WriteLine("CopyConstructorEx Start...");
 
             Addition objOne = new Addition(); //an object is created , default constructor is called
             Console.WriteLine("objOne:a " + objOne.a);
             Console.WriteLine("objOne:b " + objOne.b);
             Console.WriteLine("objOne:Type " + objOne.Type);
-            objOne.Type = "Some Cons Type";
-            objOne.a = 5;
+            objOne.Type = "Some Cons Type";//
             Console.WriteLine("objOne:Type " + objOne.Type);
-            Console.WriteLine("objOne:a " + objOne.a);
+
 
             //Addition objTwo = new Addition(7, 10); //an object is created , para constructor is called
             //Console.WriteLine("objTwo:a " + objTwo.a);
             //Console.WriteLine("objTwo:b " + objTwo.b);
             ////Console.WriteLine("objTwo:Type " + objTwo.Type);
-            //objTwo.Type = "Some Para Type"; 
+            //objTwo.Type = "Some Para Type";
             //Console.WriteLine("objTwo:Type " + objTwo.Type);
 
             //TODO: Reference type and Copy obj difference.
@@ -70,8 +71,8 @@ namespace SimpleSessions.Concepts.General
             Addition copy = new Addition(objOne);
             Console.WriteLine("copy:Type before override " + copy.Type);
             Console.WriteLine("objOne:Type before override " + objOne.Type);
-            objOne.Type = "Test Type";
-            
+            objOne.Type = "Test Type";//
+
             Console.WriteLine("copy:a " + copy.a);
             Console.WriteLine("copy:b " + copy.b);
             Console.WriteLine("copy:Type after override " + copy.Type);
@@ -86,7 +87,7 @@ namespace SimpleSessions.Concepts.General
         public int a, b;
         //If nothing provided in access level, in default it is a private field.
         static int c;
-        public static int d;
+        public static int d;                                                                                                                                                                                 
 
         public string Type { get; set; }
 
@@ -98,7 +99,10 @@ namespace SimpleSessions.Concepts.General
             a = 100;
             b = 175;
             Type = "DefaultConstructor";
-            Console.WriteLine("c: " + c);
+            Console.WriteLine("c:" + c);
+            
+
+
         }
         //A constructor with at least one parameter is called a parameterized constructor.
         //The advantage is you can initialize each instance of the class with a different value.
@@ -126,6 +130,7 @@ namespace SimpleSessions.Concepts.General
         static Addition()
         {
             c = 10;
+          
         }
 
         //TODO: Will explain this later....

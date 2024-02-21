@@ -1,15 +1,17 @@
 ﻿using SimpleSessions.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utility;
 
 namespace SimpleSessions.Concepts.General
 {
-    internal class PropertiesEx
+    internal class PropertiesEx : AgeCalculator
     {
         public void Exec()
+        {
+            ScenarioOne();
+            Console.Read();
+        }
+
+        private void ScenarioOne()
         {
             Employee employeeVinith = new Employee();
             employeeVinith.Id = 1;
@@ -20,10 +22,20 @@ namespace SimpleSessions.Concepts.General
             Employee employeeVivek = new Employee() { Id = 3, Name = "Vivek", DOB = new DateTime(1986, 06, 19), Address = "Trichy" };
             List<Employee> myEmployeeList = new List<Employee>() { employeeVinith, employeeVishnu, employeeVivek };
 
+
+            Console.WriteLine("myEmployeeList[1].Address --> " + myEmployeeList[1].Address);
+            Console.WriteLine("employeeVishnu.Address --> " + employeeVishnu.Address);
+            employeeVishnu.Address = "Chengalpattu";
+            Console.WriteLine("myEmployeeList[1].Address --> " + myEmployeeList[1].Address);
+            Console.WriteLine("employeeVishnu.Address --> " + employeeVishnu.Address);
+            myEmployeeList[1].Address = "Chennai";
+            Console.WriteLine("myEmployeeList[1].Address --> " + myEmployeeList[1].Address);
+            Console.WriteLine("employeeVishnu.Address --> " + employeeVishnu.Address);
+            /*----------------------------------------------------------------------------------------------------------------------------------*/
+
             SetAge(myEmployeeList);
 
-            PrintDetails(myEmployeeList);
-            Console.Read();
+            //PrintDetails(myEmployeeList);
         }
 
         public void PrintDetails(List<Employee> employees)
@@ -38,37 +50,16 @@ namespace SimpleSessions.Concepts.General
 
         public void SetAge(List<Employee> employees)
         {
+            AgeCalculator ageCalculator = new AgeCalculator();
             //TODO: Tomorrow convert this to foreach
             for (int i = 0; i < employees.Count; i++)
             {
                 Employee employee = employees[i];
-                employee.Age = Age(employee.DOB);
+                // employee.Age = ageCalculator.GetAge(employee.DOB);
+                //employee.Age = GetAgeProtected(employee.DOB);
+                employee.Age = GetAgeProtectedInternal(employee.DOB);
+                //employee.Age = ageCalculator.GetAgeProtectedInternal(employee.DOB);
             }
-        }
-
-        //TODO: Explain about default parameter.
-        public int Age(DateTime dob, DateTime? currentDate = null)
-        {
-            DateTime toDate = currentDate ?? DateTime.Now;
-
-            int dobYear = dob.Year;
-            int dobMonth = dob.Month;
-            int dobDay = dob.Day;
-
-            int toDateYear = toDate.Year;
-            int toMonth = toDate.Month;
-            int toDay = toDate.Day;
-
-            int age = toDateYear - dobYear;
-            if (toMonth < dobMonth)
-            {
-                age = age - 1;
-            }
-            if (toMonth == dobMonth && toDay > dobDay)
-            {
-                age = age - 1;
-            }
-            return age;
         }
     }
 }
