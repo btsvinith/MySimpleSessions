@@ -1,6 +1,6 @@
-﻿using SimpleSessions.Concepts;
-using SimpleSessions.Concepts.General;
-using SimpleSessions.Concepts.Oops;
+﻿using Concepts;
+using Concepts.General;
+using Concepts.Oops;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +16,7 @@ namespace SimpleSessions
         static void Main(String[] args)
         {
             //DataType variableName = DateType obj/value
-            var currentObj = new RefAndOutEx();
+            var currentObj = new BoxingUnBoxingEx();
             currentObj.Exec();
 
         }
