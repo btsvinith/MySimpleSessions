@@ -1,4 +1,4 @@
-﻿using Concepts.Models;
+﻿using SampleModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Concepts.DB
+namespace SampleDAL
 {
     public class EmployeeDal
     {

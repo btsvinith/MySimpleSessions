@@ -1,6 +1,7 @@
 ﻿using Concepts;
 using Concepts.ConsoleUI;
 using Concepts.DB.SQLConnections;
+using Concepts.DesignPatterns;
 using Concepts.General;
 using Concepts.Oops;
 using System;
@@ -18,10 +19,15 @@ namespace SimpleSessions
         static void Main(String[] args)
         {
             //DataType variableName = DateType obj/value
-            var currentObj = new EmployeeUIEx();
+            var currentObj = new SampleDI(ObjFactory());
             currentObj.Exec();
-           
+        }
 
+        private static ISampleDIDal ObjFactory()
+        {
+            ISampleDIDal obj = new SampleDIDal();
+
+            return obj;
         }
     }
 }
